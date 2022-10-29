@@ -1,0 +1,40 @@
+version: '3.4'
+services:
+    nginx:
+        image: nginx:1.14-alpine
+        restart: unless-stopped
+        depends_on:
+            - php-fpm
+            - openapi
+        volumes:
+            - ./webconf/nginx_dev_host.conf:/etc/nginx/nginx.conf:ro
+            - ./app/public:/app/public:ro
+        expose:
+            - 80
+        network_mode: host
+        #ports: "8080:80"
+        
+    php-fpm:
+        image: php:8.1-fpm-bullseye
+        restart: unless-stopped
+        user: "%USER%"
+        volumes:
+            - ./app/:/app
+        working_dir: /app
+        expose:
+            - 9000
+        network_mode: host
+        
+    openapi:
+        image: swaggerapi/swagger-ui:3.18.2
+        restart: unless-stopped
+        environment:
+          - SWAGGER_JSON=/app/openapi.json
+          - BASE_URL=/openapi
+          - PORT=8080
+        volumes:
+            - ./app/:/app:ro
+        working_dir: /app
+        expose:
+            - 8080
+        network_mode: host

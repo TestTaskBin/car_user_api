@@ -1,0 +1,750 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "CarUserAPI",
+        "description": "Test task for Foundarium.",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http:\/\/localhost"
+        }
+    ],
+    "paths": {
+        "\/api\/manage\/cars": {
+            "get": {
+                "tags": [
+                    "cars_crud"
+                ],
+                "summary": "Display cars list",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/Car"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "cars_crud"
+                ],
+                "summary": "Create new car",
+                "requestBody": {
+                    "description": "Car data",
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/StoreCar"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/Car"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "$ref": "#\/components\/responses\/Unprocessable entity"
+                    }
+                },
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ]
+            }
+        },
+        "\/api\/manage\/cars\/{car}": {
+            "get": {
+                "tags": [
+                    "cars_crud"
+                ],
+                "summary": "Display car data",
+                "parameters": [
+                    {
+                        "name": "car",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/Car"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "$ref": "#\/components\/responses\/Not found"
+                    }
+                },
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "cars_crud"
+                ],
+                "summary": "Update car data",
+                "parameters": [
+                    {
+                        "name": "car",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Car data",
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/StoreCar"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/Car"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "$ref": "#\/components\/responses\/Unprocessable entity"
+                    },
+                    "404": {
+                        "$ref": "#\/components\/responses\/Not found"
+                    }
+                },
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "cars_crud"
+                ],
+                "summary": "Remove car",
+                "parameters": [
+                    {
+                        "name": "car",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#\/components\/responses\/OK"
+                    },
+                    "422": {
+                        "$ref": "#\/components\/responses\/Unprocessable entity"
+                    },
+                    "404": {
+                        "$ref": "#\/components\/responses\/Not found"
+                    }
+                },
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ]
+            }
+        },
+        "\/api\/manage\/car_users": {
+            "get": {
+                "tags": [
+                    "users_crud"
+                ],
+                "summary": "Display car users list",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/CarUser"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "users_crud"
+                ],
+                "summary": "Create new car user",
+                "requestBody": {
+                    "description": "Car user data",
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/StoreCarUser"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "$ref": "#\/components\/responses\/Unprocessable entity"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/CarUser"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ]
+            }
+        },
+        "\/api\/manage\/car_users\/{car_user}": {
+            "get": {
+                "tags": [
+                    "users_crud"
+                ],
+                "summary": "Display car  user information",
+                "parameters": [
+                    {
+                        "name": "car_user",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Car user data",
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/StoreCarUser"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/CarUser"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "$ref": "#\/components\/responses\/Not found"
+                    }
+                },
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "users_crud"
+                ],
+                "summary": "Update car user data",
+                "parameters": [
+                    {
+                        "name": "car_user",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/CarUser"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "$ref": "#\/components\/responses\/Unprocessable entity"
+                    },
+                    "404": {
+                        "$ref": "#\/components\/responses\/Not found"
+                    }
+                },
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "users_crud"
+                ],
+                "summary": "Remove car user",
+                "parameters": [
+                    {
+                        "name": "car_user",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#\/components\/responses\/OK"
+                    },
+                    "422": {
+                        "$ref": "#\/components\/responses\/Unprocessable entity"
+                    },
+                    "404": {
+                        "$ref": "#\/components\/responses\/Not found"
+                    }
+                },
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ]
+            }
+        },
+        "\/api\/assign\/free_users": {
+            "get": {
+                "tags": [
+                    "assign"
+                ],
+                "summary": "Show full list of free users",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/CarUser"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "$ref": "#\/components\/responses\/Not found"
+                    }
+                },
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ]
+            }
+        },
+        "\/api\/assign\/free_cars": {
+            "get": {
+                "tags": [
+                    "assign"
+                ],
+                "summary": "Show full list of free cars",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/Car"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "$ref": "#\/components\/responses\/Not found"
+                    }
+                },
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ]
+            }
+        },
+        "\/api\/assign\/assing_car\/{car}\/{user}": {
+            "get": {
+                "tags": [
+                    "assign"
+                ],
+                "summary": "Assign car to user",
+                "parameters": [
+                    {
+                        "name": "car",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "user",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#\/components\/responses\/OK"
+                    },
+                    "404": {
+                        "$ref": "#\/components\/responses\/Not found"
+                    },
+                    "422": {
+                        "$ref": "#\/components\/responses\/Unprocessable entity"
+                    }
+                },
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ]
+            }
+        },
+        "\/api\/assign\/release_car\/{car}\/{user}": {
+            "get": {
+                "tags": [
+                    "assign"
+                ],
+                "summary": "Release car from user",
+                "parameters": [
+                    {
+                        "name": "car",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "user",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#\/components\/responses\/OK"
+                    },
+                    "404": {
+                        "$ref": "#\/components\/responses\/Not found"
+                    },
+                    "422": {
+                        "$ref": "#\/components\/responses\/Unprocessable entity"
+                    }
+                },
+                "security": [
+                    {
+                        "BearerToken": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Car": {
+                "type": "object",
+                "properties": {
+                    "car_id": {
+                        "description": "Car ID",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "reg_num": {
+                        "description": "Car registration number",
+                        "type": "string",
+                        "example": "aa321b"
+                    },
+                    "model": {
+                        "description": "Car model",
+                        "type": "string",
+                        "example": "Toyota"
+                    },
+                    "car_user_id": {
+                        "description": "Car's assigned user ID",
+                        "type": "integer"
+                    },
+                    "created_at": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "format": "date-time",
+                        "type": "string"
+                    }
+                }
+            },
+            "CarUser": {
+                "type": "object",
+                "properties": {
+                    "car_user_id": {
+                        "description": "User's ID",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "first_name": {
+                        "description": "User's first name",
+                        "type": "string",
+                        "example": "Ivan"
+                    },
+                    "last_name": {
+                        "description": "User's last name",
+                        "type": "string",
+                        "example": "Petrov"
+                    },
+                    "created_at": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "format": "date-time",
+                        "type": "string"
+                    }
+                }
+            },
+            "StoreCar": {
+                "type": "object",
+                "properties": {
+                    "reg_num": {
+                        "type": "string",
+                        "example": "xy765q"
+                    },
+                    "model": {
+                        "type": "string",
+                        "example": "Toyota"
+                    }
+                }
+            },
+            "StoreCarUser": {
+                "type": "object",
+                "properties": {
+                    "first_name": {
+                        "type": "string",
+                        "example": "Ivan"
+                    },
+                    "last_name": {
+                        "type": "string",
+                        "example": "Petrov"
+                    }
+                }
+            }
+        },
+        "responses": {
+            "OK": {
+                "description": "OK",
+                "content": {
+                    "application\/json": {
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "Not found": {
+                "description": "Not Found",
+                "content": {
+                    "application\/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string",
+                                    "example": "No query results for model [App\\Models\\XXX] 12345"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "Unprocessable entity": {
+                "description": "Unprocessable Entity",
+                "content": {
+                    "application\/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string",
+                                    "example": "Validation failed!"
+                                },
+                                "errors": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "example": {
+                                        "field": [
+                                            "The field is required!"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "BearerToken": {
+                "type": "http",
+                "in": "header",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "cars_crud",
+            "description": "Cars CRUD"
+        },
+        {
+            "name": "users_crud",
+            "description": "Users CRUD"
+        },
+        {
+            "name": "assign",
+            "description": "Car assign API"
+        }
+    ]
+}
