@@ -7,7 +7,20 @@
     },
     "servers": [
         {
-            "url": "http:\/\/localhost"
+            "url": "http:\/\/localhost",
+            "description": "Default dev backend"
+        },
+        {
+            "url": "http:\/\/localhost\/",
+            "description": "localhost:80"
+        },
+        {
+            "url": "http:\/\/localhost:8000\/",
+            "description": "localhost:8000"
+        },
+        {
+            "url": "http:\/\/localhost:8080\/",
+            "description": "localhost:8080"
         }
     ],
     "paths": {

@@ -84,7 +84,7 @@ docker-compose up -d
 
 ## Запуск проекта без docker
 
-Запуск стандартны для `Laravel`:
+Установка проекта стандартная для `Laravel`:
 
 bash```
 git clone ... && cd car_user_api/app
@@ -102,3 +102,6 @@ php artisan serve
 ```
 
 Без докера SwaggerUI требуется поднимать отдельно. Документация в формате OpenAPI включена в проект ( [openapi.json](app/openapi.json) ).
+
+Посмотреть документацию можно во внешнем (SwaggerUI)[https://petstore.swagger.io/?url=https://bitbucket.org/GuestOne/car_user_api/raw/master/app/openapi.json], но могут быть проблемы с запросами на `localhost`.
+
