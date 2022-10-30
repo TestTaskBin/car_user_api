@@ -742,7 +742,7 @@
             "BearerToken": {
                 "type": "http",
                 "in": "header",
-                "scheme": "Bearer"
+                "scheme": "bearer"
             }
         }
     },

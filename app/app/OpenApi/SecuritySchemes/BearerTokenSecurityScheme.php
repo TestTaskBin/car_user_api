@@ -13,7 +13,7 @@ class BearerTokenSecurityScheme extends SecuritySchemeFactory
         return SecurityScheme::create('BearerToken')
                         ->type(SecurityScheme::TYPE_HTTP)
                         ->in(SecurityScheme::IN_HEADER)
-                        ->scheme('Bearer');
+                        ->scheme('bearer')
         ;
     }
 }
