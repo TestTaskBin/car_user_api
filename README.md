@@ -68,7 +68,7 @@ CRUD-ы "машин" и "пользователей машин" реализов
 Склонируйте проект и запустите скрипт `init_laravel_develop.sh`.
 При желании отредактируйте `docker-compose.yml`.
 
-bash```
+```bash
 git clone ... && cd car_user_api
 ./init_laravel_develop.sh
 ```
@@ -86,7 +86,7 @@ docker-compose up -d
 
 Установка проекта стандартная для `Laravel`:
 
-bash```
+```bash
 git clone ... && cd car_user_api/app
 cp .env.example  .env
 composer install
@@ -97,7 +97,7 @@ php artisan db:seed
 
 Работает встроенный сервер:
 
-bash```
+```bash
 php artisan serve
 ```
 
