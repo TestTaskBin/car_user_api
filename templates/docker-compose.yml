@@ -12,7 +12,7 @@ services:
         expose:
             - 80
         ports: 
-            - "8080:80"
+            - "8000:80"
         
     php-fpm:
         image: php:8.1-fpm-bullseye

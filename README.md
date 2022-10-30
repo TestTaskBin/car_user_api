@@ -78,9 +78,9 @@ bash```
 docker-compose up -d
 ```
 
-Главная страница будет доступна по адресу `http://localhost:8080/`.
+Главная страница будет доступна по адресу `http://localhost:8000/`.
 
-Документация в формате OpenAPI включена в проект ( [openapi.json](app/openapi.json) ), а также доступна в SwaggerUI по адресу `http://localhost:8080/openapi`. Ключ API смотри на главной странице.
+Документация в формате OpenAPI включена в проект ( [openapi.json](app/openapi.json) ), а также доступна в SwaggerUI по адресу `http://localhost:8000/openapi`. Ключ API смотри на главной странице.
 
 ## Запуск проекта без docker
 
@@ -101,7 +101,9 @@ bash```
 php artisan serve
 ```
 
-Без докера SwaggerUI требуется поднимать отдельно. Документация в формате OpenAPI включена в проект ( [openapi.json](app/openapi.json) ).
+По умолчанию главная страница будет на `http://localhost:8000/`.
 
-Посмотреть документацию можно во [внешнем SwaggerUI](https://petstore.swagger.io/?url=https://bitbucket.org/GuestOne/car_user_api/raw/master/app/openapi.json), но могут быть проблемы с запросами на `localhost`.
+Документация в формате OpenAPI включена в проект ( [openapi.json](app/openapi.json) ), а также доступна в SwaggerUI по адресу `http://localhost:8000/openapi`. Ключ API смотри на главной странице.
+
+Кроме того посмотреть документацию можно во [внешнем SwaggerUI](https://petstore.swagger.io/?url=https://bitbucket.org/GuestOne/car_user_api/raw/master/app/openapi.json), но могут быть проблемы с запросами на `localhost`.
 

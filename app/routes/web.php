@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Vyuldashev\LaravelOpenApi\Generator;
 use App\Models\User;
 
 /*
@@ -21,5 +22,13 @@ Route::get('/', function () {
         $user->tokens()->delete();
         $token = $user->createToken('api-access')->plainTextToken;
     }
-    return view('welcome', ['user' => $user, 'token' => $token ]);
+    return view('welcome', ['user' => $user, 'token' => $token]);
+})->name('welcome');
+
+Route::get('/openapi.json', function () {
+    return response()->file(app_path('../openapi.json'), ['content-type' => 'application/json']);
+});
+
+Route::get('/openapi_dynamic.json', function (Generator $generator) {
+    return response($generator->generate());
 });

@@ -12,7 +12,6 @@ services:
         expose:
             - 80
         network_mode: host
-        #ports: "8080:80"
         
     php-fpm:
         image: php:8.1-fpm-bullseye

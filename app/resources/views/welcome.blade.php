@@ -77,7 +77,7 @@ php artisan db:seed</pre>
                             </div>
 
                             <div class="flex items-center">
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="/openapi" class="underline text-gray-900 dark:text-white">Открыть SwaggerUI</a></div>
+                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="/openapi/" class="underline text-gray-900 dark:text-white">Открыть SwaggerUI</a></div>
                             </div>
 
                             <div class="ml-12">
