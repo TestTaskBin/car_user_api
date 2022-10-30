@@ -66,14 +66,15 @@ CRUD-ы "машин" и "пользователей машин" реализов
 Нужен `docker`, `docker-compose` и `bash`.
 
 Склонируйте проект и запустите скрипт `init_laravel_develop.sh`.
-При желании отредактируйте `docker-compose.yml`.
+
+*Замечание:* проект не будет корректно работать при запуске `docker-compose` из-под пользователя `root`.
 
 ```bash
 git clone ... && cd car_user_api
 ./init_laravel_develop.sh
 ```
-
-Запустите контейнеры
+При желании отредактируйте `docker-compose.yml`.
+Запустите контейнеры.
 
 ```bash
 docker-compose up -d
