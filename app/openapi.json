@@ -88,7 +88,7 @@
                         }
                     },
                     "422": {
-                        "$ref": "#\/components\/responses\/Unprocessable entity"
+                        "$ref": "#\/components\/responses\/UnprocessableEntity"
                     }
                 },
                 "security": [
@@ -131,7 +131,7 @@
                         }
                     },
                     "404": {
-                        "$ref": "#\/components\/responses\/Not found"
+                        "$ref": "#\/components\/responses\/NotFound"
                     }
                 },
                 "security": [
@@ -182,10 +182,10 @@
                         }
                     },
                     "422": {
-                        "$ref": "#\/components\/responses\/Unprocessable entity"
+                        "$ref": "#\/components\/responses\/UnprocessableEntity"
                     },
                     "404": {
-                        "$ref": "#\/components\/responses\/Not found"
+                        "$ref": "#\/components\/responses\/NotFound"
                     }
                 },
                 "security": [
@@ -214,10 +214,10 @@
                         "$ref": "#\/components\/responses\/OK"
                     },
                     "422": {
-                        "$ref": "#\/components\/responses\/Unprocessable entity"
+                        "$ref": "#\/components\/responses\/UnprocessableEntity"
                     },
                     "404": {
-                        "$ref": "#\/components\/responses\/Not found"
+                        "$ref": "#\/components\/responses\/NotFound"
                     }
                 },
                 "security": [
@@ -276,7 +276,7 @@
                 },
                 "responses": {
                     "422": {
-                        "$ref": "#\/components\/responses\/Unprocessable entity"
+                        "$ref": "#\/components\/responses\/UnprocessableEntity"
                     },
                     "200": {
                         "description": "OK",
@@ -344,7 +344,7 @@
                         }
                     },
                     "404": {
-                        "$ref": "#\/components\/responses\/Not found"
+                        "$ref": "#\/components\/responses\/NotFound"
                     }
                 },
                 "security": [
@@ -385,10 +385,10 @@
                         }
                     },
                     "422": {
-                        "$ref": "#\/components\/responses\/Unprocessable entity"
+                        "$ref": "#\/components\/responses\/UnprocessableEntity"
                     },
                     "404": {
-                        "$ref": "#\/components\/responses\/Not found"
+                        "$ref": "#\/components\/responses\/NotFound"
                     }
                 },
                 "security": [
@@ -417,10 +417,10 @@
                         "$ref": "#\/components\/responses\/OK"
                     },
                     "422": {
-                        "$ref": "#\/components\/responses\/Unprocessable entity"
+                        "$ref": "#\/components\/responses\/UnprocessableEntity"
                     },
                     "404": {
-                        "$ref": "#\/components\/responses\/Not found"
+                        "$ref": "#\/components\/responses\/NotFound"
                     }
                 },
                 "security": [
@@ -456,7 +456,7 @@
                         }
                     },
                     "404": {
-                        "$ref": "#\/components\/responses\/Not found"
+                        "$ref": "#\/components\/responses\/NotFound"
                     }
                 },
                 "security": [
@@ -492,7 +492,7 @@
                         }
                     },
                     "404": {
-                        "$ref": "#\/components\/responses\/Not found"
+                        "$ref": "#\/components\/responses\/NotFound"
                     }
                 },
                 "security": [
@@ -533,10 +533,10 @@
                         "$ref": "#\/components\/responses\/OK"
                     },
                     "404": {
-                        "$ref": "#\/components\/responses\/Not found"
+                        "$ref": "#\/components\/responses\/NotFound"
                     },
                     "422": {
-                        "$ref": "#\/components\/responses\/Unprocessable entity"
+                        "$ref": "#\/components\/responses\/UnprocessableEntity"
                     }
                 },
                 "security": [
@@ -577,10 +577,10 @@
                         "$ref": "#\/components\/responses\/OK"
                     },
                     "404": {
-                        "$ref": "#\/components\/responses\/Not found"
+                        "$ref": "#\/components\/responses\/NotFound"
                     },
                     "422": {
-                        "$ref": "#\/components\/responses\/Unprocessable entity"
+                        "$ref": "#\/components\/responses\/UnprocessableEntity"
                     }
                 },
                 "security": [
@@ -691,7 +691,7 @@
                     }
                 }
             },
-            "Not found": {
+            "NotFound": {
                 "description": "Not Found",
                 "content": {
                     "application\/json": {
@@ -707,7 +707,7 @@
                     }
                 }
             },
-            "Unprocessable entity": {
+            "UnprocessableEntity": {
                 "description": "Unprocessable Entity",
                 "content": {
                     "application\/json": {

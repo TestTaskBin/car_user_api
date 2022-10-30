@@ -22,7 +22,7 @@ class UnprocessableEntityResponse extends ResponseFactory implements Reusable
                         ->example(['field' => ['The field is required!']])
         );
 
-        return Response::unprocessableEntity('Unprocessable entity')
+        return Response::unprocessableEntity('UnprocessableEntity')
                         ->content(MediaType::json()->schema($response))
         ;
     }

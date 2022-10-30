@@ -17,7 +17,7 @@ class CarUserResponse extends ResponseFactory
                 CarUserSchema::ref('data'),
         );
 
-        return Response::ok('Car user data wrapped')
+        return Response::ok('CarUserDataWrapped')
 //                        ->description()
                         ->content(MediaType::json()->schema($response));
     }

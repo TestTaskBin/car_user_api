@@ -18,7 +18,7 @@ class CarListResponse extends ResponseFactory
                         ->items(CarSchema::ref())
         );
 
-        return Response::ok('Cars list')
+        return Response::ok('CarsListWraped')
 //            ->description('')
                         ->content(MediaType::json()->schema($response))
         ;

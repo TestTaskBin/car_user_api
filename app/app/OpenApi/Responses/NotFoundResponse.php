@@ -18,7 +18,7 @@ class NotFoundResponse extends ResponseFactory implements Reusable
                 Schema::string('message')->example('No query results for model [App\\Models\\XXX] 12345'),
         );
 
-        return Response::notFound('Not found')
+        return Response::notFound('NotFound')
                         ->content(MediaType::json()->schema($response))
         ;
     }
