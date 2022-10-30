@@ -74,7 +74,8 @@ git clone ... && cd car_user_api
 ```
 
 Запустите контейнеры
-bash```
+
+```bash
 docker-compose up -d
 ```
 
