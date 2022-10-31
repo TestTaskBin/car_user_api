@@ -18,17 +18,22 @@ C помощью laravel сделать api для управления спис
  - **Под «апи для управления списком» подразумевается, в том числе администраторское АПИ для добавления / удаления автомобилей и/или редактирование пользователей?**
  - И то и то.
 
+
  - **Что значит «управлять»? Как в каршеринге можно забронировать себе автомобиль? Или можно выбрать авто и как-то им управлять как радиоуправляемой машинкой?**
  - Привязать пользователя к авто.
+
 
  - **Может быть что при выборе одного и того же пользователя могут быть разные машины?**
  - Нет, один пользователь - 1 машина.
 
+
  - **Нужно ли внести эти два списка в базу данных?**
  - Да
 
+
  - **Надо оборачивать все в Docker?**
  - Желательно, не обязательно.
+
 
  - **Какую архитектуру стоит применить (к примеру DDD) или достаточного простой архитектуры?**
  - Будет плюсом DDD
@@ -70,7 +75,8 @@ CRUD-ы "машин" и "пользователей машин" реализов
 *Замечание:* проект не будет корректно работать при запуске `docker-compose` из-под пользователя `root`.
 
 ```bash
-git clone ... && cd car_user_api
+git clone https://github.com/TestTaskBin/car_user_api.git
+cd car_user_api
 ./init_laravel_develop.sh
 ```
 При желании отредактируйте `docker-compose.yml`.
@@ -89,7 +95,8 @@ docker-compose up -d
 Установка проекта стандартная для `Laravel`:
 
 ```bash
-git clone ... && cd car_user_api/app
+git clone https://github.com/TestTaskBin/car_user_api.git
+cd car_user_api/app
 cp .env.example  .env
 composer install
 php artisan migrate
@@ -107,5 +114,5 @@ php artisan serve
 
 Документация в формате OpenAPI включена в проект ( [openapi.json](app/openapi.json) ), а также доступна в SwaggerUI по адресу `http://localhost:8000/openapi`. Ключ API смотри на главной странице.
 
-Кроме того посмотреть документацию можно во [внешнем SwaggerUI](https://petstore.swagger.io/?url=https://bitbucket.org/GuestOne/car_user_api/raw/master/app/openapi.json), но могут быть проблемы с запросами на `localhost`.
+Кроме того посмотреть документацию можно во [внешнем SwaggerUI](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/TestTaskBin/car_user_api/master/app/openapi.json), но могут быть проблемы с запросами на `localhost`.
 
